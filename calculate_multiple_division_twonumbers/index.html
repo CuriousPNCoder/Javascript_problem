@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Multiple and Division Two Numbers</title>
 </head>
 <body>
-    
+    <div style="padding-bottom: 10px;">
+    <input type="text" placeholder="Enter any number" id="num1" style="padding: 10px 20px 10px 20px; border-radius: 5px;">
+    </div>
+    <div>
+    <input type="text" placeholder="Enter any number" id="num2" style="padding: 10px 20px 10px 20px; border-radius: 5px;">
+    </div>
+    <div style="padding-top: 10px;">
+    <button onclick="Multiple()" style="padding: 7px 20px 7px 20px;">Multiple</button>
+    <button onclick="Division()" style="padding: 7px 20px 7px 20px;">Division</button>
+    </div>
+
+
+<p>Total: 
+<div id="answer" style="font-weight: 600;"></div>    
+    <script>
+        function Multiple(){
+       let firstnumber = document.getElementById("num1").value
+       let secondnumber = document.getElementById("num2").value
+
+       document.getElementById("answer").innerHTML = firstnumber*secondnumber;
+        }
+        function Division(){
+            let firstnumber = document.getElementById("num1").value;
+            let secondnumber = document.getElementById("num2").value;
+
+            document.getElementById("answer").innerHTML = firstnumber/secondnumber;
+        }
+    </script>
 </body>
 </html>
