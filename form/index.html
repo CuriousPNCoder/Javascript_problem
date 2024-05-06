@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .heading {
+            font-size: 22px;
+            font-weight: 600;
+            text-align: center;
+            color: rgb(2, 2, 78);
+        }
+
+        .bottom-gapping {
+            padding-bottom: 10px;
+        }
+
+        .bttn {
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(65, 159, 241);
+            color: white;
+            font-size: 15px;
+            width: 100%;
+        }
+
+        .bttn:hover {
+            font-weight: 600;
+            background-color: rgb(44, 129, 205);
+        }
+
+        .card-alignment {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .card {
+            padding: 40px 50px;
+            background-color: rgb(249, 249, 249);
+            border: 1px solid rgb(198, 198, 198);
+            border-radius: 12px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        input {
+            padding: 11px 10px;
+            width: 100%;
+        }
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td,th{
+            border: 1px solid rgb(58, 58, 58);
+            padding: 8px;
+        }
+        .bttn-gap{
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-alignment">
+        <div class="card">
+            <p class="heading">User Form</p>
+            <div class="form-alignment">
+                <div>
+                   <div class="bottom-gapping">
+                    <label>First Name</label>
+                    <input type="text" id="firstname">
+                </div>
+                    <div class="bottom-gapping">
+                        <label>Email Address</label>
+                        <input type="email" id="emailaddress">
+                    </div>
+
+                    <div class="bottom-gapping">
+                        <label>Contact Number</label>
+                        <input type="number" id="contactnumber">
+                    </div>
+
+                    <div class="bottom-gapping">
+                        <label>Permanent Address</label>
+                        <input type="text" id="permanentaddress">
+                    </div>
+
+                    <div class="bottom-gapping">
+                        <label>Present Address</label>
+                        <input type="text" id="presentaddress">
+                    </div>
+                </div>
+            </div>
+               <div class="bttn-gap">
+                 <button class="bttn" onclick="formSubmit()">Submit</button>
+                    </div>
+                    <p id="thankyou-msg"></p>
+        </div>
+    </div>
+   
+</body>
+<script>
+function formSubmit(){
+    let Firstname = document.getElementById("firstname").value;
+    let Emailaddress = document.getElementById("emailaddress").value;
+    let Contactnumber = document.getElementById("contactnumber").value;
+    let Permanentaddress = document.getElementById("permanentaddress").value;
+    let Presentaddress = document.getElementById("presentaddress").value;
+
+    //user data format show in array
+    let userdata = [Firstname,Emailaddress,Contactnumber,Permanentaddress,Presentaddress];
+    
+    //thank you sms show
+    document.getElementById("thankyou-msg").innerHTML = "Thank you " + "'" + userdata[0] + "'" + " for fillup this form, our team contact with you."
+
+}
+</script>
+</html>
