@@ -1,16 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Grade Calculate</title>
+    <style>
+        .heading {
+            font-size: 22px;
+            font-weight: 600;
+            text-align: center;
+            color: rgb(2, 2, 78);
+        }
+
+        .bottom-gapping {
+            padding-bottom: 10px;
+        }
+
+        .bttn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(65, 159, 241);
+            color: white;
+            font-size: 15px;
+        }
+
+        .bttn:hover {
+            font-weight: 600;
+            background-color: rgb(44, 129, 205);
+        }
+
+        .card-alignment {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .card {
+            padding: 40px 50px;
+            background-color: aliceblue;
+        }
+
+        input {
+            padding: 11px 10px;
+            width: 100%;
+        }
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td,th{
+            border: 1px solid rgb(58, 58, 58);
+            padding: 8px;
+        }
+        .gapping{
+            padding-top: 10px;
+        }
+    </style>
 </head>
+
 <body>
+    <div class="card-alignment">
+        <div class="card">
+            <p class="heading">Grade Wise Calculator</p>
+            <div class="form-alignment">
+                <div class="bottom-gapping">
+                    <label>Fullname</label>
+                    <input type="text">
+                </div>
+                <div>
+                    <div class="bottom-gapping">
+                        <label>Math</label>
+                        <input type="text" id="math">
+                    </div>
+
+                    <div class="bottom-gapping">
+                        <label>Biology</label>
+                        <input type="text" id="biology">
+                    </div>
+
+                    <div class="bottom-gapping">
+                        <label>Computer Science</label>
+                        <input type="text" id="computer">
+                    </div>
+
+                    <div class="bottom-gapping">
+                        <label>Bengali</label>
+                        <input type="text" id="bengali">
+                    </div>
+
+                    <div class="bottom-gapping">
+                        <label>English</label>
+                        <input type="text" id="english">
+                    </div>
+                </div>
+
+                <div>
+                    <p>Out of 500, you achived</p>
+                    <P id="show-totalnumber"></P>
+                </div>
+
+                <button class="bttn" onclick="Gradewisecheck()">Calculate number(grade wise)</button>
+                <div>
+                    <p id="show-grade"></p>
+                    <table>
+                        <tr>
+                            <th>Math</th>
+                            <th>Biology</th>
+                            <th>Computer Science</th>
+                            <th>Bengali</th>
+                            <th>English</th>
+                            <th>Grade</th>
+                            <th>Percentage</th>
+                        </tr>
+                        <tr>
+                            <td id="math-number"></td>
+                            <td id="biology-number"></td>
+                            <td id="computer-number"></td>
+                            <td id="bengali-number"></td>
+                            <td id="english-number"></td>
+                            <td id="grade-number"></td>
+                            <td id="grade-percentage"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        //Exam number wise calculte the grade system.
-        //0-34(fail)
-        //35-40(pass)
-        //41-59(pass)
+        function Gradewisecheck() {
+            console.log("working");
+            let Math = parseInt(document.getElementById("math").value);
+            let Biology = parseInt(document.getElementById("biology").value);
+            let Computer = parseInt(document.getElementById("computer").value);
+            let Bengali = parseInt(document.getElementById("bengali").value);
+            let English = parseInt(document.getElementById("english").value);
+            let Totalnumber = document.getElementById("show-totalnumber").innerHTML = Math + Biology + Computer +
+                Bengali + English;
+
+            //show number in table
+            document.getElementById("math-number").innerHTML = Math;
+            document.getElementById("biology-number").innerHTML = Biology;
+            document.getElementById("computer-number").innerHTML = Computer;
+            document.getElementById("bengali-number").innerHTML = Bengali;
+            document.getElementById("english-number").innerHTML = English;
+            document.getElementById("grade-number").innerHTML = Totalnumber;
+            document.getElementById("grade-percentage").innerHTML = ((Totalnumber/500.0)*100) + "%";
+
+            //calculate the grade system
+            if (Totalnumber < 100) {
+                console.log("You are not passed in this exam")
+                document.getElementById("show-grade").innerHTML = "You are not passed in this exam";
+            } else if (Totalnumber < 200) {
+                console.log("You are passed in this exam and your grade marks is D")
+                document.getElementById("show-grade").innerHTML =
+                    "You are passed in this exam and your grade marks is D";
+            } else if (Totalnumber < 350) {
+                console.log("You are passed in this exam and your grade marks is C")
+                document.getElementById("show-grade").innerHTML =
+                    "You are passed in this exam and your grade marks is C";
+            } else if (Totalnumber < 420) {
+                console.log("You are passed this exam and your grade marks is B")
+                document.getElementById("show-grade").innerHTML = "You are passed this exam and your grade marks is B";
+            } else if (Totalnumber < 500) {
+                console.log("You are passed this exam and your grade marks is A")
+                document.getElementById("show-grade").innerHTML = "You are passed this exam and your grade marks is A";
+            } else {
+                console("Please attend second time exam")
+            }
+        }
     </script>
 </body>
+
 </html>
