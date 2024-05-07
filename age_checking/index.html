@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Age</title>
+    <style>
+      .heading {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 530;
+      }
+      .card {
+        background-color: white;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        width: 80vh;
+        padding: 5px 25px;
+      }
+      .gap-adjust {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+      }
+      input {
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .gapping {
+        padding-bottom: 14px;
+      }
+      .bttn {
+        padding: 10px 20px;
+        border: none;
+        background-color: rgb(6, 30, 82);
+        color: white;
+        font-weight: 700;
+        border-radius: 6px;
+      }
+      .text-green {
+        color: rgb(9, 115, 21);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gap-adjust">
+      <div class="card">
+        <p class="heading">Vote Machine</p>
+        <p>
+          If you are new user then check yourself that your age is eligibale for
+          vote or not.
+        </p>
+
+        <div class="gapping">
+          <input type="text" placeholder="Enter your name" id="fullname" />
+        </div>
+        <div class="gapping">
+          <input type="text" placeholder="Enter your age" id="agevalue" />
+        </div>
+        <button class="bttn" onclick="Agecheck()">Check</button>
+        <p id="check-age"></p>
+      </div>
+    </div>
+  </body>
+  <script>
+    function Agecheck() {
+      let Fullname = document.getElementById("fullname").value;
+      let Agevalue = document.getElementById("agevalue").value;
+
+      if (Agevalue >= 18) {
+        console.log("your age is more than 18");
+        document.getElementById("check-age").innerHTML =
+          "Now <span style='color: green; font-weight: bold;'>you are selected</span> for continue this process, beacuse your age is more than 18";
+      } else {
+        console.log("your age is less than 18");
+        document.getElementById("check-age").innerHTML =
+          "<span style='color: red; font-weight: bold;'>Sorry! you are not selected</span> for this process, beacuse your age is less than 18";
+      }
+    }
+  </script>
+</html>
