@@ -80,10 +80,11 @@
                    <input type="text" placeholder="Enter Your Present Address" id="present_address">
                    </div>
                    <div class="gapping">
-                    <input type="number" placeholder="Add Today Date" id="current_date">
+                    <input type="date" placeholder="Add Today Date" id="current_date">
                    </div>
             
                 <button class="bttn" onclick="Formdata()">Submit</button>
+                <button class="bttn" id="hide-print" onclick="window.print()" style="display: none;">Print Document</button>
             </div>
         </div>
     </div>
@@ -114,9 +115,11 @@
             let Presentaddress = document.getElementById("present_address").value;
             let Currentdate = document.getElementById("current_date").value;
 
+            document.getElementById("hide-print").style.display = 'inline';
+
             console.log(Contactnumber,Permanentaddress,Presentaddress,Currentdate)
             alert(Fullname + " ,Thank you for submit your application, our team will contact will you.")
-           location.reload();
+        //    location.reload();
     }
 </script>
 
