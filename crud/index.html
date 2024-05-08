@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create CRUD Concepts</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <input type="text" placeholder="Add your task title" id="title" />
+      </div>
+      <div>
+        <button onclick="Addtask()">Add Task</button>
+      </div>
+      <p id="display-task"></p>
+    </div>
+  </body>
+  <script>
+    let taskadd = [];
+    function Addtask() {
+      let Title = document.getElementById("title").value;
+      taskadd.push(Title);
+      console.log(taskadd);
+      document.getElementById(
+        "display-task"
+      ).innerHTML = `Task Title - ${taskadd}`;
+    }
+  </script>
+</html>
