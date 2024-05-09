@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Mainipulation</title>
+    <style>
+        #heading{
+            color: rgb(31, 61, 127);
+            font-weight: 500;
+        }
+        table,th, td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 id="heading">If you click the button, you can see the magic</h2>
+    <button onclick="Clickme()">Click Me</button>
+
+    <p>View Design</p>
+    <button onclick="Tablebutton()">Table</button>
+    <div id="show-table"></div>
+    
+</body>
+<script>
+    //change name by clicking button
+    function Clickme(){
+     document.getElementById("heading").innerText = "Hi, I am paramita."
+    }
+    function Tablebutton(){
+        document.getElementById("show-table").innerHTML += 
+        '<table><tr><th>First Name</th> <th>Contact Number</th></tr> <tr><td>Puja Dutta</td> <td>#### #### ##</td></tr><table>'
+    }
+</script>
+</html>
